@@ -1,10 +1,9 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { POKEMON_DETAIL_MOCK, POKEMON_DETAIL_RESPONSE_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
+import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
 import { PokedexDataMockService } from 'src/app/shared/mocks/services/pokedex-data/pokedex-data.mock.service';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
 import { configureTestSuite } from 'src/assets/test/testing';
-import { environment } from 'src/environments/environment';
 
 import { MainPokemonDetailService } from './main-pokemon-detail.service';
 
@@ -42,8 +41,5 @@ describe('MainPokemonDetailService', () => {
     service.getPokemon('ivysaur').subscribe(res => {
       expect(res).toEqual(POKEMON_DETAIL_MOCK);
     });
-    const request = httpTestingController.expectOne(`${environment.pokemonApi}ivysaur`);
-    request.flush(POKEMON_DETAIL_MOCK);
   });
-  
 });
