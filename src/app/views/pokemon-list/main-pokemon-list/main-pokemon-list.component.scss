@@ -8,7 +8,8 @@ div#pokemon-table-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 65%;
+    //width: 65%;
+    width: 67%;
     margin: 0 auto;
 }
 
@@ -17,8 +18,9 @@ div#pokemon-table-title {
 }
 
 div.pokemon-table-item {
-    width: 27%;
-    margin: 2em;
+    //width: 27%;
+    width: 400px;
+    margin: 2em 2% 2em 2%;
 }
 
 .text-lead {
@@ -30,4 +32,22 @@ div.pokemon-table-item {
 h2 {
     color: $grayDark;
     margin: 0;
+}
+
+@media (max-width: 2100px) {
+    div#pokemon-table-list {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1760px) {
+    div#pokemon-table-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    img.pokemon-logo {
+        width: 80%;
+    }
 }

@@ -17,6 +17,10 @@ const routes: Routes = [
     loadChildren: () => import('./views/pokemon-detail/pokemon-detail.module').then(m => m.PokemonDetailModule),
     data: { title: 'Pokedex' }
   },
+  {
+    path: 'error',
+    loadChildren: () => import('./views/error-page/error-page.module').then(m => m.ErrorPageModule),
+  }
 ];
 
 @NgModule({

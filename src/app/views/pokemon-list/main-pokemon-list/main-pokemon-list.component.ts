@@ -29,7 +29,6 @@ export class MainPokemonListComponent implements OnInit {
   getPokedex(): void {
     this.pokedexService.getPokemons(this.pagination.offset, this.pagination.limit)
       .subscribe((pokemons: Pokemon[]) => {
-        console.log("MainPokemonListComponent -> getPokedex -> pokemons", pokemons)
         this.pokemons = pokemons;
       });
   }

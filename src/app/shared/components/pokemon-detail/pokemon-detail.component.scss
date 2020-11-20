@@ -1,7 +1,7 @@
 @import "./../../../../assets/styles/colors.scss";
 
 div#pokemon-detail{
-    width: 27%;
+    width: 700px;
     text-align: center;
     margin: 3em auto;
 }
@@ -37,4 +37,11 @@ div#pokemon-detail-description ul {
 
 .card-buttons span:hover{
     color: $dragonsBlood;
+}
+
+@media (max-width: 900px) {
+    div#pokemon-detail{
+        width: 500px;
+        margin: 4em auto;
+    }
 }
