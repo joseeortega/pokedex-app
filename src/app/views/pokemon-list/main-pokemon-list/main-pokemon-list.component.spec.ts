@@ -1,13 +1,13 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { POKEMON_LIST_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
-import { PokedexMockService } from 'src/app/shared/mocks/services/pokedex/pokedex.mock.service';
-import { PokedexService } from 'src/app/shared/services/pokedex/pokedex.service';
+import { MainPokemonListMockService } from 'src/app/shared/mocks/services/main-pokemon-list/main-pokemon-list.mock.service';
 import { configureTestSuite } from 'src/assets/test/testing';
 
 import { MainPokemonListComponent } from './main-pokemon-list.component';
+import { MainPokemonListService } from './main-pokemon-list.service';
 
 describe('MainPokemonListComponent', () => {
   let component: MainPokemonListComponent;
@@ -22,11 +22,12 @@ describe('MainPokemonListComponent', () => {
         MainPokemonListComponent
       ],
       imports: [
+        BrowserAnimationsModule,
         HttpClientTestingModule,
         RouterTestingModule
       ],
       providers: [
-        { provide: PokedexService, useClass: PokedexMockService }
+        { provide: MainPokemonListService, useClass: MainPokemonListMockService }
       ]
     })
       .compileComponents();
@@ -43,18 +44,14 @@ describe('MainPokemonListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get all the profiles', done => {
-    component.ngOnInit();
-    fixture.detectChanges();
-
-    expect(component.pokemons).toEqual(POKEMON_LIST_MOCK);
-    done();
-  });
-
   it('should navigate to pokemon view detail', () => {
     const navigateSpy = spyOn(router, 'navigate');
     component.goToPokemonDetail('ivysaur');
     expect(navigateSpy).toHaveBeenCalled();
+  });
+
+  it('should onScroll', () => {
+    expect(component.onScroll()).toBe();
   });
 
 });

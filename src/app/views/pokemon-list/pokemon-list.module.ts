@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PokemonListRoutingModule } from './pokemon-list-routing.module';
 import { MainPokemonListComponent } from './main-pokemon-list/main-pokemon-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     PokemonListRoutingModule,
-    SharedModule
+    SharedModule,
+    InfiniteScrollModule
   ]
 })
 export class PokemonListModule { }

@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-import { PokedexService } from '../pokedex.service';
+import { MainPokemonDetailService } from 'src/app/views/pokemon-detail/main-pokemon-detail/main-pokemon-detail.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonDetailResolverService implements Resolve<Observable<string>> {
-  constructor(private pokedexService: PokedexService) { }
+  constructor(private mainPokemonDetailService: MainPokemonDetailService) { }
 
   resolve(route: ActivatedRouteSnapshot, rstate: RouterStateSnapshot): any {
-    return this.pokedexService.getPokemon(route.paramMap.get('name'));
+    return this.mainPokemonDetailService.getPokemon(route.paramMap.get('name'));
   }
 
 }

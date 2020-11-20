@@ -1,55 +1,41 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from 'src/app/shared/models/pokemon.model';
 import { Router } from '@angular/router';
-import { Pagination } from 'src/app/shared/models/pagination.model';
-import { PokedexService } from 'src/app/shared/services/pokedex/pokedex.service';
-import { Subject } from 'rxjs';
-import { OnDestroy } from '@angular/core';
-import { takeUntil } from 'rxjs/operators';
+import { animations } from 'src/app/core/animations/animations';
+import { MainPokemonListService } from './main-pokemon-list.service';
 
 @Component({
   selector: 'app-main-pokemon-list',
   templateUrl: './main-pokemon-list.component.html',
-  styleUrls: ['./main-pokemon-list.component.scss']
+  styleUrls: ['./main-pokemon-list.component.scss'],
+  providers: [MainPokemonListService],
+  animations: [animations]
 })
-export class MainPokemonListComponent implements OnInit, OnDestroy {
-
-  pagination: Pagination = {
-    offset: 0,
-    limit: 151
-  };
-
-  pokemons: Pokemon[] = [];
-
-  /**
-   * Use to destroy and prevent memory leaks
-   */
-  private destroy$: Subject<void> = new Subject<void>();
+export class MainPokemonListComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private pokedexService: PokedexService
+    public mainPokemonListService: MainPokemonListService
   ) { }
 
   ngOnInit(): void {
-    this.getPokedex();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.scrollToTop();
+    this.getInitialPokedex();
   }
 
   goToPokemonDetail(name: string): void {
     this.router.navigate(['pokemon', name]);
   }
 
-  private getPokedex(): void {
-    this.pokedexService.getPokemons(this.pagination.offset, this.pagination.limit).pipe(
-      takeUntil(this.destroy$))
-      .subscribe((pokemons: Pokemon[]) => {
-        this.pokemons = pokemons;
-      });
+  private getInitialPokedex(): void {
+    this.mainPokemonListService.getInitialPokemons();
+  }
+
+  onScroll(): void {
+    this.mainPokemonListService.getMorePokemons();
+  }
+
+  private scrollToTop(): void {
+    window.scroll(0, 0);
   }
 
 }
