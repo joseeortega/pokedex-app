@@ -5,6 +5,7 @@ import { Pagination } from 'src/app/shared/models/pagination.model';
 import { PokedexService } from 'src/app/shared/services/pokedex/pokedex.service';
 import { Subject } from 'rxjs';
 import { OnDestroy } from '@angular/core';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-main-pokemon-list',
@@ -44,7 +45,8 @@ export class MainPokemonListComponent implements OnInit, OnDestroy {
   }
 
   private getPokedex(): void {
-    this.pokedexService.getPokemons(this.pagination.offset, this.pagination.limit)
+    this.pokedexService.getPokemons(this.pagination.offset, this.pagination.limit).pipe(
+      takeUntil(this.destroy$))
       .subscribe((pokemons: Pokemon[]) => {
         this.pokemons = pokemons;
       });
