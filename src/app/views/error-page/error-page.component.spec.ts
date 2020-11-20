@@ -3,7 +3,7 @@ import { configureTestSuite } from 'src/assets/test/testing';
 
 import { ErrorPageComponent } from './error-page.component';
 
-fdescribe('ErrorPageComponent', () => {
+describe('ErrorPageComponent', () => {
   let component: ErrorPageComponent;
   let fixture: ComponentFixture<ErrorPageComponent>;
 
