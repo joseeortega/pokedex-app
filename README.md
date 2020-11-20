@@ -8,6 +8,8 @@ Este proyecto pese a ser un proyecto de tamaño pequeño esta estructura en una 
 
 El proyecto esta dividido en diversos módulos que se cargan bajo demanda haciendo uso de la técnica lazy loading para garantizar el correcto rendimiento de la aplicación así como su escalabilidad.
 
+Todos los componentes del proyecto hacen uso de la estrategia de detección de cambios OnPush para optimizar el rendimiento de la aplicación.
+
 ## Diseño
 El diseño del portal esta inspirado en la sugerencia mencionada en el enunciado de la prueba tecnica.
 

@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { POKEMON_LIST_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
-import { PokedexMockService } from 'src/app/shared/mocks/services/pokedex.mock.service';
-import { PokedexService } from 'src/app/shared/services/pokedex.service';
+import { PokedexMockService } from 'src/app/shared/mocks/services/pokedex/pokedex.mock.service';
+import { PokedexService } from 'src/app/shared/services/pokedex/pokedex.service';
 import { configureTestSuite } from 'src/assets/test/testing';
 
 import { MainPokemonListComponent } from './main-pokemon-list.component';

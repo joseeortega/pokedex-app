@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PokemonDetailComponent } from 'src/app/shared/components/pokemon-detail/pokemon-detail.component';
-import { PokemonDetailResolverService } from 'src/app/shared/services/resolvers/pokemon-detail-resolver.service';
+import { PokemonDetailResolverService } from 'src/app/shared/services/pokedex/resolvers/pokemon-detail-resolver.service';
 import { MainPokemonDetailComponent } from './main-pokemon-detail/main-pokemon-detail.component';
 
 const routes: Routes = [

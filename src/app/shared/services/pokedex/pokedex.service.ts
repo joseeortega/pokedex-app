@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
-import { Pokemon, PokemonDetail } from '../models/pokemon.model';
-import { PokemonImageResolver } from '../helpers/pokemon-image-resolver';
+import { PokemonImageResolver } from '../../helpers/pokemon-image-resolver';
+import { Pokemon, PokemonDetail } from '../../models/pokemon.model';
 
 @Injectable({
   providedIn: 'root'

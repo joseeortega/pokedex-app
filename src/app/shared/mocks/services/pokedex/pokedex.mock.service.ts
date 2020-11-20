@@ -1,5 +1,5 @@
 import { of, Observable } from 'rxjs';
-import { POKEMON_DETAIL_MOCK, POKEMON_LIST_MOCK } from '../models/pokemon.mock';
+import { POKEMON_DETAIL_MOCK, POKEMON_LIST_MOCK } from '../../models/pokemon.mock';
 
 export class PokedexMockService {
 
