@@ -43,14 +43,6 @@ describe('MainPokemonListService', () => {
     expect(service.pokemons.getValue().length).toEqual(20);
   });
 
-  it('should return more Pokemons', () => {
-    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
-    service.getInitialPokemons();
-    expect(service.pokemons.getValue().length).toEqual(20);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(40);
-  });
-
   it('should set list as completed and avoid last call', () => {
     service.pokemons = new BehaviorSubject<Pokemon[]>(null);
     service.getInitialPokemons();
