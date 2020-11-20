@@ -74,7 +74,6 @@ export class MainPokemonListService implements OnDestroy {
 
     if (!this.listCompleted) {
       this.updatePokemonPagination();
-      console.log("this.pagination", this.pagination)
       this.isLoading.next(true);
       let headers = new HttpHeaders();
       headers = headers.append('NO_LOADER', 'true');

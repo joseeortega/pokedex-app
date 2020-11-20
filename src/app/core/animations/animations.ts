@@ -35,40 +35,40 @@ const params = animation(
 export const animations = [
     trigger('slideInOutSidebar', [
         state('in', style({
-            'right': '0px'
+            right: '0px'
         })),
         state('out', style({
-            'right': '-435px'
+            right: '-435px'
         })),
         transition('in => out', [group([
             animate('300ms ease-in-out', style({
-                'right': '-435px'
+                right: '-435px'
             }))
         ]
         )]),
         transition('out => in', [group([
             animate('300ms ease-in-out', style({
-                'right': '0px'
+                right: '0px'
             }))
         ]
         )])
     ]),
     trigger('slideInOutSidebarMenu', [
         state('in', style({
-            'right': '0px'
+            right: '0px'
         })),
         state('out', style({
-            'right': '-100vw'
+            right: '-100vw'
         })),
         transition('in => out', [group([
             animate('300ms ease-in-out', style({
-                'right': '-100vw'
+                right: '-100vw'
             }))
         ]
         )]),
         transition('out => in', [group([
             animate('300ms ease-in-out', style({
-                'right': '0px'
+                right: '0px'
             }))
         ]
         )])

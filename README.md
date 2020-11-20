@@ -1,37 +1,35 @@
 # PokedexApp
 
-Proyecto básico que consume la API de Pokemon (pokeapi.co).
+Basic project that consumes the Pokemon API (pokeapi.co).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
-## Estructura del proyecto
-Este proyecto pese a ser un proyecto de tamaño pequeño esta estructura en una estructura modular respetando el principio de responsabilidad única haciendo uso de componentes stateful, componetes stateless y servicios con la lógica de negocio.
+## Project structure
+This project, has a modular structure respecting the principle of single responsibility, making use of stateful components, stateless components, and services with business logic.
 
-El proyecto esta dividido en diversos módulos que se cargan bajo demanda haciendo uso de la técnica lazy loading para garantizar el correcto rendimiento de la aplicación así como su escalabilidad.
+The project is divided into various modules that are loaded on demand using the lazy loading technique to guarantee the correct performance of the application and scalability.
 
-Todos los componentes del proyecto hacen uso de la estrategia de detección de cambios OnPush para optimizar el rendimiento de la aplicación.
+## Design
+The design of the portal is inspired by the suggestion mentioned in the technical test.
 
-## Diseño
-El diseño del portal esta inspirado en la sugerencia mencionada en el enunciado de la prueba tecnica.
+The Grotesque font has been imported into the project.
 
-Se ha importado en el proyecto la tipografía Grotesque.
+Taking advantage of the advantages that SCSS offers, the project has global styles, color and size variables.
 
-Aprovechando las ventajas que ofrece SCSS, el proyecto dispone de estilos globales, variables de color y tamaño.
+## Responsive design
+A basic adaptation has been made so that the portal is functional both on desktop and mobile devices (Test the portal on both devices)
 
-## Diseño responsive
-Se ha realiza una adaptación básica para que el portal sea funcional tanto en escritorio como en dispositivos móviles (Prueba el portal en ambos dispositivos)
+## Interceptors
+2 HTTP request interceptors have been implemented.
 
-## Interceptores
-Se han implementado 2 interceptores de peticiones HTTP.
+The first has the responsibility to automatically show a global spinner when requests are being made. This interceptor is prepared to modify its behavior and not show in the global spinner in case it is not desired (for example during infinite scroll).
 
-El primero tiene como responsabilidad mostrar de forma automática un spinner global cuando se están realizando peticiones. Este interceptor esta preparado para modificar su comportamiento y no mostrar en el spinner global en caso de que no se desee (Por ejemplo durante el scroll infinito).
-
-También se ha hecho una implementación básica de un interceptor de errores HTTP que redirigue a una página de error básica.
+A basic implementation of an HTTP error tracker has also been made that redirects to a basic error page.
 
 ## Lint
-El proyecto cumple todas las reglas del lint configuradas.
+The project meets all configured lint rules.
 
 ## Unit tests
-Se ha realizado una implementación de test unitarios obteniendo una cobertura por encima del 95%.
+An implementation of unit tests has been implemented, obtaining a coverage above 90%.
 
 ## Running unit tests
 
