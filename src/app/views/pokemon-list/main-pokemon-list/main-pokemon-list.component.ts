@@ -1,3 +1,4 @@
+import { ChangeDetectionStrategy } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { animations } from 'src/app/core/animations/animations';
@@ -8,7 +9,8 @@ import { MainPokemonListService } from './main-pokemon-list.service';
   templateUrl: './main-pokemon-list.component.html',
   styleUrls: ['./main-pokemon-list.component.scss'],
   providers: [MainPokemonListService],
-  animations: [animations]
+  animations: [animations],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainPokemonListComponent implements OnInit {
 

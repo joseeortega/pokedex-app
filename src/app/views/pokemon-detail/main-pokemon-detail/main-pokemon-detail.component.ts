@@ -10,7 +10,7 @@ import { PokemonDetail } from 'src/app/shared/models/pokemon.model';
 })
 export class MainPokemonDetailComponent implements OnInit {
 
-  pokemonDetail: PokemonDetail;
+  pokemon: PokemonDetail;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +19,7 @@ export class MainPokemonDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pokemonDetail = this.route.snapshot.data.pokemon;
+    this.pokemon = this.route.snapshot.data.pokemon;
   }
 
   closeDetail(): void {

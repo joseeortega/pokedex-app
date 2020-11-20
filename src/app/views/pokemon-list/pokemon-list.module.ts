@@ -6,7 +6,6 @@ import { MainPokemonListComponent } from './main-pokemon-list/main-pokemon-list.
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
-
 @NgModule({
   declarations: [MainPokemonListComponent],
   imports: [

@@ -6,6 +6,7 @@ import { PokemonImageResolver } from 'src/app/shared/helpers/pokemon-image-resol
 import { Pagination } from 'src/app/shared/models/pagination.model';
 import { Pokemon } from 'src/app/shared/models/pokemon.model';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -28,13 +29,11 @@ export class MainPokemonListService implements OnDestroy {
   private isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   isLoading$ = this.isLoading.asObservable();
 
-
   /**
    * Total list of Pokemons
    */
   pokemons: BehaviorSubject<Pokemon[]> = new BehaviorSubject<Pokemon[]>(null);
   pokemons$ = this.pokemons.asObservable();
-
 
   /**
    * Indicates if the complete list has been loaded
@@ -90,7 +89,7 @@ export class MainPokemonListService implements OnDestroy {
           });
           this.pokemons.next([...this.pokemons.getValue(), ...responsePokemons]);
 
-          if (this.pokemons.getValue().length >= 151) {
+          if (this.pokemons.getValue().length >= environment.pokemonFirstGeneration) {
             this.listCompleted = true;
           }
           this.isLoading.next(false);
@@ -100,6 +99,7 @@ export class MainPokemonListService implements OnDestroy {
 
   private updatePokemonPagination(): void {
     this.pagination.offset = this.pokemons.getValue().length;
-    this.pagination.limit = this.pagination.offset + this.pagination.limit > 151 ? 151 - this.pagination.offset : this.pagination.limit;
+    const isNextOverGeneration = this.pagination.offset + this.pagination.limit > environment.pokemonFirstGeneration;
+    this.pagination.limit = isNextOverGeneration ? environment.pokemonFirstGeneration - this.pagination.offset : this.pagination.limit;
   }
 }

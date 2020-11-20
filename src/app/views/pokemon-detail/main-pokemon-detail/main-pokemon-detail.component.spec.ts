@@ -53,7 +53,7 @@ describe('MainPokemonDetailComponent', () => {
   });
 
   it('should init pokemon element by resolver data', () => {
-    expect(component.pokemonDetail).toEqual(POKEMON_DETAIL_MOCK);
+    expect(component.pokemon).toEqual(POKEMON_DETAIL_MOCK);
   });
 
   it('should navigate to pokemon list view', () => {

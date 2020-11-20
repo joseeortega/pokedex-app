@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: 'error',
     loadChildren: () => import('./views/error-page/error-page.module').then(m => m.ErrorPageModule),
+  },
+  {
+    path: '**',
+    redirectTo: 'error'
   }
 ];
 
