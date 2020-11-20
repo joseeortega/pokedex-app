@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainPokemonListComponent,
-    data: { type: 'Pokedex'}
+    data: { type: 'Pokedex' }
   },
 ];
 

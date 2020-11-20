@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/shared/models/pokemon.model';
 import { PokedexService } from 'src/app/shared/services/pokedex.service';
 import { Router } from '@angular/router';
+import { Pagination } from 'src/app/shared/models/pagination.model';
 
 @Component({
   selector: 'app-main-pokemon-list',
@@ -10,9 +11,9 @@ import { Router } from '@angular/router';
 })
 export class MainPokemonListComponent implements OnInit {
 
-  pagination = {
+  pagination: Pagination = {
     offset: 0,
-    limit: 20
+    limit: 151
   };
 
   pokemons: Pokemon[] = [];

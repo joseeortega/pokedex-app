@@ -1,47 +1,54 @@
 @import "./../../../../assets/styles/colors.scss";
 
-div#pokemon-detail{
+div#pokemon-detail {
     width: 700px;
     text-align: center;
     margin: 3em auto;
-}
 
-div#pokemon-detail-description{
-    text-align: left;
-    margin: 1em;
-}
+    div#pokemon-detail-description {
+        text-align: left;
+        margin: 1em;
 
-div#pokemon-detail-description p {
-    text-align: left;
-    margin: 1em;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: $grayDark;
-}
+        p {
+            text-align: left;
+            margin: 1em;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: $grayDark;
+        }
 
-div#pokemon-detail-description span {
-    font-size: 1rem;
-    color: $grayDark;
-}
+        span {
+            font-size: 1rem;
+            color: $grayDark;
+        }
 
-div#pokemon-detail-description ul {
-    margin-left: 2em;
-    color: $grayDark;
-}
+        ul {
+            margin-left: 2em;
+            color: $grayDark;
+        }
+    }
 
-.card-buttons{
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0.5em;
-}
+    .card-buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 0.5em;
 
-.card-buttons span:hover{
-    color: $dragonsBlood;
+        &:hover {
+            color: $dragonsBlood;
+        }
+    }
 }
 
 @media (max-width: 900px) {
-    div#pokemon-detail{
+    div#pokemon-detail {
         width: 500px;
+        margin: 4em auto;
+    }
+}
+
+@media (max-width: 600px) {
+    div#pokemon-detail {
+        width: 90%;
         margin: 4em auto;
     }
 }

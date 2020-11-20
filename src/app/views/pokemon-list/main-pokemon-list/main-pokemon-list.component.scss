@@ -8,30 +8,28 @@ div#pokemon-table-list {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    //width: 65%;
     width: 67%;
     margin: 0 auto;
+
+    div.pokemon-table-item {
+        width: 400px;
+        margin: 2em 2% 2em 2%;
+    }
 }
 
 div#pokemon-table-title {
     margin: 2em;
-}
 
-div.pokemon-table-item {
-    //width: 27%;
-    width: 400px;
-    margin: 2em 2% 2em 2%;
-}
+    .text-lead {
+        font-size: 0.9em;
+        color: $grayDark;
+        margin: 0;
+    }
 
-.text-lead {
-    font-size: 0.9em;
-    color: $grayDark;
-    margin: 0;
-}
-
-h2 {
-    color: $grayDark;
-    margin: 0;
+    h2 {
+        color: $grayDark;
+        margin: 0;
+    }
 }
 
 @media (max-width: 2100px) {

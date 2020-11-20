@@ -11,4 +11,5 @@ import { ErrorPageComponent } from './error-page.component';
     ErrorPageRoutingModule
   ]
 })
+
 export class ErrorPageModule { }

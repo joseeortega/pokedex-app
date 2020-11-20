@@ -1,9 +1,12 @@
 <div id="pokemon-detail">
     <div class="pokemon-card rounded">
+
         <div class="card-buttons">
             <span class="bold pointer" (click)="closeDetail()">X</span>
         </div>
+
         <img [src]="pokemon.imgUrl" />
+
         <p class="bold capitalize">{{pokemon.name}}</p>
 
         <div id="pokemon-detail-description">
@@ -18,5 +21,6 @@
                 <li *ngFor="let ability of pokemon.abilities">{{ability}}</li>
             </ul>
         </div>
+
     </div>
 </div>
