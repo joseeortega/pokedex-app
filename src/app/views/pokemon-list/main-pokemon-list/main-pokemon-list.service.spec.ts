@@ -11,7 +11,7 @@ import { MainPokemonListService } from './main-pokemon-list.service';
 let httpTestingController: HttpTestingController;
 let service: MainPokemonListService;
 
-fdescribe('MainPokemonListService', () => {
+describe('MainPokemonListService', () => {
 
   configureTestSuite();
 
@@ -31,7 +31,6 @@ fdescribe('MainPokemonListService', () => {
 
   afterEach(() => {
     httpTestingController.verify();
-    service = TestBed.inject(MainPokemonListService);
   });
 
   it('should be created', () => {
@@ -39,18 +38,21 @@ fdescribe('MainPokemonListService', () => {
   });
 
   it('should return first Pokemons', () => {
+    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
     service.getInitialPokemons();
     expect(service.pokemons.getValue().length).toEqual(20);
   });
 
   it('should return more Pokemons', () => {
+    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
     service.getInitialPokemons();
     expect(service.pokemons.getValue().length).toEqual(20);
     service.getMorePokemons();
     expect(service.pokemons.getValue().length).toEqual(40);
   });
 
-  it('should set list as completed', () => {
+  it('should set list as completed and avoid last call', () => {
+    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
     service.getInitialPokemons();
     expect(service.pokemons.getValue().length).toEqual(20);
     service.getMorePokemons();
@@ -66,7 +68,8 @@ fdescribe('MainPokemonListService', () => {
     service.getMorePokemons();
     expect(service.pokemons.getValue().length).toEqual(140);
     service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(141);
+    expect(service.pokemons.getValue().length).toBeGreaterThan(140);
+    service.getMorePokemons();
   });
 
 });

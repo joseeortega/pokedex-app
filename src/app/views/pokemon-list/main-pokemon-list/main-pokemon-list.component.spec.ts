@@ -50,8 +50,4 @@ describe('MainPokemonListComponent', () => {
     expect(navigateSpy).toHaveBeenCalled();
   });
 
-  it('should onScroll', () => {
-    expect(component.onScroll()).toBe();
-  });
-
 });

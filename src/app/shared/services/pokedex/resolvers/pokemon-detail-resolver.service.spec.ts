@@ -6,7 +6,6 @@ import { MainPokemonDetailMockService } from 'src/app/shared/mocks/services/main
 import { MainPokemonDetailService } from 'src/app/views/pokemon-detail/main-pokemon-detail/main-pokemon-detail.service';
 import { configureTestSuite } from 'src/assets/test/testing';
 
-
 import { PokemonDetailResolverService } from './pokemon-detail-resolver.service';
 
 describe('PokemonDetailResolverService', () => {
