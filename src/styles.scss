@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/colors.scss";
+
+div.pokemon-card{
+    border: 1px solid black;
+    text-align: center;
+    padding: 2em;
+    background-color: $white;
+    transition: 0.3s all;
+}
+
+div.pokemon-card img{
+    height: 4em;
+}
+
+div.pokemon-card p.bold{
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+div.pokemon-table-item div.pokemon-card:hover{
+    background-color: $gray;
+    transition: 0.3s all;
+}

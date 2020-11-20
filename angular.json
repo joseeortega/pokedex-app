@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/styles/app.scss"
             ],
             "scripts": []
           },
@@ -92,9 +93,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/styles/app.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverageExclude": [
+              "src/app/shared/models/**/*",
+              "src/app/shared/mocks/**/*",
+              "src/app/views/styles/**/*",
+              "src/assets/**/*"
+            ]
           }
         },
         "lint": {

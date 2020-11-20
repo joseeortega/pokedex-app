@@ -1,0 +1,33 @@
+@import "./../../../../assets/styles/colors.scss";
+
+main {
+    text-align: center;
+}
+
+div#pokemon-table-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 0 auto;
+}
+
+div#pokemon-table-title {
+    margin: 2em;
+}
+
+div.pokemon-table-item {
+    width: 27%;
+    margin: 2em;
+}
+
+.text-lead {
+    font-size: 0.9em;
+    color: $grayDark;
+    margin: 0;
+}
+
+h2 {
+    color: $grayDark;
+    margin: 0;
+}

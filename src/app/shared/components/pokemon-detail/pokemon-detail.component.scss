@@ -1,0 +1,40 @@
+@import "./../../../../assets/styles/colors.scss";
+
+div#pokemon-detail{
+    width: 27%;
+    text-align: center;
+    margin: 3em auto;
+}
+
+div#pokemon-detail-description{
+    text-align: left;
+    margin: 1em;
+}
+
+div#pokemon-detail-description p {
+    text-align: left;
+    margin: 1em;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: $grayDark;
+}
+
+div#pokemon-detail-description span {
+    font-size: 1rem;
+    color: $grayDark;
+}
+
+div#pokemon-detail-description ul {
+    margin-left: 2em;
+    color: $grayDark;
+}
+
+.card-buttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5em;
+}
+
+.card-buttons span:hover{
+    color: $dragonsBlood;
+}
