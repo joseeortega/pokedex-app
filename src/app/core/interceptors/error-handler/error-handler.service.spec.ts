@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ErrorHandlerService } from './error-handler.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 describe('ErrorHandlerService', () => {
   let service: ErrorHandlerService;

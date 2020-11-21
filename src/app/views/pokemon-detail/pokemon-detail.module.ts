@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PokemonDetailRoutingModule } from './pokemon-detail-routing.module';
-import { MainPokemonDetailComponent } from './main-pokemon-detail/main-pokemon-detail.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
-  declarations: [MainPokemonDetailComponent],
+  declarations: [
+    PokemonDetailComponent
+  ],
   imports: [
     CommonModule,
     PokemonDetailRoutingModule,

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpEvent, HttpHandler, HttpHeaders, HttpResponse, HttpInterceptor } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, finalize } from 'rxjs/operators';
-import { SpinnerService } from 'src/app/shared/services/spinner/spinner.service';
+import { SpinnerService } from 'src/app/shared/components/spinner/spinner.service';
 const NO_SPINNER_LOADING_HEADER = 'NO_LOADER';
 
 @Injectable({

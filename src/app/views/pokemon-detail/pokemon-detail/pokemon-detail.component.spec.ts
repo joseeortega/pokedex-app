@@ -1,17 +1,17 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
 import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
-import { MainPokemonDetailMockService } from 'src/app/shared/mocks/services/main-pokemon-detail/main-pokemon-detail.mock.service';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { PokemonDetailMockService } from 'src/app/shared/mocks/services/pokemon-detail/pokemon-detail.mock.service';
 
-import { MainPokemonDetailComponent } from './main-pokemon-detail.component';
-import { MainPokemonDetailService } from './main-pokemon-detail.service';
+import { PokemonDetailComponent } from './pokemon-detail.component';
+import { PokemonDetailService } from './pokemon-detail.service';
 
-describe('MainPokemonDetailComponent', () => {
-  let component: MainPokemonDetailComponent;
-  let fixture: ComponentFixture<MainPokemonDetailComponent>;
+describe('PokemonDetailComponent', () => {
+  let component: PokemonDetailComponent;
+  let fixture: ComponentFixture<PokemonDetailComponent>;
   let router: Router;
 
   const fakeActivatedRoute = {
@@ -27,7 +27,7 @@ describe('MainPokemonDetailComponent', () => {
   beforeAll(done => (async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        MainPokemonDetailComponent
+        PokemonDetailComponent
       ],
       imports: [
         HttpClientTestingModule,
@@ -35,14 +35,14 @@ describe('MainPokemonDetailComponent', () => {
       ],
       providers: [
         { provide: ActivatedRoute, useValue: fakeActivatedRoute },
-        { provide: MainPokemonDetailService, useClass: MainPokemonDetailMockService }
+        { provide: PokemonDetailService, useClass: PokemonDetailMockService }
       ]
     })
       .compileComponents();
   })().then(done).catch(done.fail));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainPokemonDetailComponent);
+    fixture = TestBed.createComponent(PokemonDetailComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
     fixture.detectChanges();

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { configureTestSuite } from 'src/assets/test/testing';
-import { POKEMON_PREVIEW_MOCK } from '../../mocks/models/pokemon.mock';
+import { POKEMON_PREVIEW_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 import { PokemonPreviewComponent } from './pokemon-preview.component';
 

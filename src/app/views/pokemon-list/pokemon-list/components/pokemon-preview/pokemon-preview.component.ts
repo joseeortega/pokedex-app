@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Pokemon } from '../../models/pokemon.model';
+import { Pokemon } from 'src/app/shared/models/pokemon.model';
 
 @Component({
   selector: 'app-pokemon-preview',

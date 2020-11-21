@@ -3,13 +3,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
+import { PokemonPreviewComponent } from './components/pokemon-preview/pokemon-preview.component';
 
-import { MainPokemonListComponent } from './main-pokemon-list.component';
+import { PokemonListComponent } from './pokemon-list.component';
 
-describe('MainPokemonListComponent', () => {
-  let component: MainPokemonListComponent;
-  let fixture: ComponentFixture<MainPokemonListComponent>;
+describe('PokemonListComponent', () => {
+  let component: PokemonListComponent;
+  let fixture: ComponentFixture<PokemonListComponent>;
   let router: Router;
 
   configureTestSuite();
@@ -17,7 +18,8 @@ describe('MainPokemonListComponent', () => {
   beforeAll(done => (async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        MainPokemonListComponent
+        PokemonListComponent,
+        PokemonPreviewComponent
       ],
       imports: [
         BrowserAnimationsModule,
@@ -29,7 +31,7 @@ describe('MainPokemonListComponent', () => {
   })().then(done).catch(done.fail));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainPokemonListComponent);
+    fixture = TestBed.createComponent(PokemonListComponent);
     component = fixture.componentInstance;
     router = TestBed.inject(Router);
     fixture.detectChanges();

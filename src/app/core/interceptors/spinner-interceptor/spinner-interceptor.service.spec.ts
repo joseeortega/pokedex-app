@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { SpinnerInterceptorService } from './spinner-interceptor.service';
 import { of } from 'rxjs';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 describe('SpinnerInterceptorService', () => {
   let service: SpinnerInterceptorService;

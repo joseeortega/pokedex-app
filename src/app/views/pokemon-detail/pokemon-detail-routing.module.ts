@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PokemonDetailResolverService } from 'src/app/shared/services/pokedex/resolvers/pokemon-detail-resolver.service';
-import { MainPokemonDetailComponent } from './main-pokemon-detail/main-pokemon-detail.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PokemonDetailResolverService } from './resolvers/pokemon-detail-resolver.service';
 
 const routes: Routes = [
   {
@@ -9,7 +9,7 @@ const routes: Routes = [
     resolve: {
       pokemon: PokemonDetailResolverService
     },
-    component: MainPokemonDetailComponent,
+    component: PokemonDetailComponent,
     data: { title: 'Pokemon Detail', breadcrumb: 'Pokemon Detail' }
   }
 ];

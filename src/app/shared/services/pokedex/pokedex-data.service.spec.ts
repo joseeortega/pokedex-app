@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { PokedexDataService } from './pokedex-data.service';
 import { environment } from 'src/environments/environment';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 import { POKEMON_LIST_MOCK, POKEMON_LIST_RESPONSE_MOCK, POKEMON_DETAIL_MOCK, POKEMON_DETAIL_RESPONSE_MOCK } from '../../mocks/models/pokemon.mock';
 
 let httpTestingController: HttpTestingController;

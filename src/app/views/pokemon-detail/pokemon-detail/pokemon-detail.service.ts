@@ -6,10 +6,10 @@ import { PokemonDetail } from 'src/app/shared/models/pokemon.model';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class MainPokemonDetailService {
-  constructor(private pokedexDataService: PokedexDataService) {}
+export class PokemonDetailService {
+  constructor(private pokedexDataService: PokedexDataService) { }
 
   /**
    * Get Pokemon by name

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 import { SpinnerService } from './spinner.service';
 

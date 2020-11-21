@@ -9,9 +9,9 @@ import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class MainPokemonListService implements OnDestroy {
+export class PokemonListService implements OnDestroy {
   pagination: Pagination = {
     offset: 0,
     limit: 20,
@@ -41,7 +41,7 @@ export class MainPokemonListService implements OnDestroy {
    */
   private listCompleted = false;
 
-  constructor(private pokedexDataService: PokedexDataService) {}
+  constructor(private pokedexDataService: PokedexDataService) { }
 
   ngOnDestroy(): void {
     this.destroy$.next();

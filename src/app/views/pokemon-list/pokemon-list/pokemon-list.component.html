@@ -9,9 +9,9 @@
         <p class="text-lead bold">151 Pokemons</p>
     </div>
 
-    <div id="pokemon-table-list" [@listAnimation]="(mainPokemonListService.pokemons$ | async)?.length" infiniteScroll
+    <div id="pokemon-table-list" [@listAnimation]="(pokemonListService.pokemons$ | async)?.length" infiniteScroll
         [infiniteScrollDistance]="3" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
-        <div class="pokemon-table-item pointer" *ngFor="let pokemon of mainPokemonListService.pokemons$ | async">
+        <div class="pokemon-table-item pointer" *ngFor="let pokemon of pokemonListService.pokemons$ | async">
             <app-pokemon-preview [pokemon]="pokemon" (click)="goToPokemonDetail(pokemon.name)"></app-pokemon-preview>
         </div>
     </div>

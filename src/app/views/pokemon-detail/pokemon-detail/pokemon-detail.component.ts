@@ -1,14 +1,14 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PokemonDetail } from 'src/app/shared/models/pokemon.model';
 
 @Component({
-  selector: 'app-main-pokemon-detail',
-  templateUrl: './main-pokemon-detail.component.html',
-  styleUrls: ['./main-pokemon-detail.component.scss'],
+  selector: 'app-pokemon-detail',
+  templateUrl: './pokemon-detail.component.html',
+  styleUrls: ['./pokemon-detail.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainPokemonDetailComponent implements OnInit {
+export class PokemonDetailComponent implements OnInit {
 
   pokemon: PokemonDetail;
 

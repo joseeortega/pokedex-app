@@ -1,16 +1,16 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
+import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
 import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
 import { PokedexDataMockService } from 'src/app/shared/mocks/services/pokedex-data/pokedex-data.mock.service';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
-import { configureTestSuite } from 'src/assets/test/testing';
 
-import { MainPokemonDetailService } from './main-pokemon-detail.service';
+import { PokemonDetailService } from './pokemon-detail.service';
 
 let httpTestingController: HttpTestingController;
-let service: MainPokemonDetailService;
+let service: PokemonDetailService;
 
-describe('MainPokemonDetailService', () => {
+describe('PokemonDetailService', () => {
 
   configureTestSuite();
 
@@ -25,7 +25,7 @@ describe('MainPokemonDetailService', () => {
     });
 
     httpTestingController = TestBed.inject(HttpTestingController);
-    service = TestBed.inject(MainPokemonDetailService);
+    service = TestBed.inject(PokemonDetailService);
 
   })().then(done).catch(done.fail));
 

@@ -2,16 +2,16 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRouteSnapshot } from '@angular/router';
 import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
-import { MainPokemonDetailMockService } from 'src/app/shared/mocks/services/main-pokemon-detail/main-pokemon-detail.mock.service';
-import { MainPokemonDetailService } from 'src/app/views/pokemon-detail/main-pokemon-detail/main-pokemon-detail.service';
-import { configureTestSuite } from 'src/assets/test/testing';
+import { PokemonDetailMockService } from 'src/app/shared/mocks/services/pokemon-detail/pokemon-detail.mock.service';
+import { configureTestSuite } from 'src/app/shared/test/testing';
+import { PokemonDetailService } from '../pokemon-detail/pokemon-detail.service';
 
 import { PokemonDetailResolverService } from './pokemon-detail-resolver.service';
 
 describe('PokemonDetailResolverService', () => {
   let resolver: PokemonDetailResolverService;
   let route: ActivatedRouteSnapshot;
-  let mainPokemonDetailService: MainPokemonDetailService;
+  let mainPokemonDetailService: PokemonDetailService;
 
   configureTestSuite();
 
@@ -21,12 +21,12 @@ describe('PokemonDetailResolverService', () => {
         HttpClientTestingModule
       ],
       providers: [
-        { provide: MainPokemonDetailService, useClass: MainPokemonDetailMockService }
+        { provide: PokemonDetailService, useClass: PokemonDetailMockService }
       ]
     });
 
     route = new ActivatedRouteSnapshot();
-    mainPokemonDetailService = TestBed.inject(MainPokemonDetailService);
+    mainPokemonDetailService = TestBed.inject(PokemonDetailService);
     resolver = TestBed.inject(PokemonDetailResolverService);
   })().then(done).catch(done.fail));
 
