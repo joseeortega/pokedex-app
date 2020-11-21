@@ -1,25 +1,19 @@
-# Stage 1 #
-FROM kubevged.azurecr.io/base/node:12.10.0-alpine as builder
+# Stage 1
+FROM node:14 as build-step
 
-COPY package.json package-lock.json ./
+RUN mkdir -p /app
 
-RUN npm ci \
-    && mkdir /ng-app \
-    && mv ./node_modules ./ng-app
+WORKDIR /app
 
-WORKDIR /ng-app
+COPY package.json /app
 
-COPY . .
+RUN npm install
 
-RUN npm run ng build -- --prod --output-path=dist
+COPY . /app
 
-# Stage 2 #
-FROM kubevged.azurecr.io/base/nginx:1.17.3-alpine
+RUN npm run build --prod
 
-COPY nginx/default.conf /etc/nginx/conf.d/
+# Stage 2
+FROM nginx:1.17.1-alpine
 
-RUN rm -rf /usr/share/nginx/html/*
-
-COPY --from=builder /ng-app/dist /usr/share/nginx/html
-
-CMD ["nginx", "-g", "daemon off;"]
+COPY --from=build-step /app/docs /usr/share/nginx/html

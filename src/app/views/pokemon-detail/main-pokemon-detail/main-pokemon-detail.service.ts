@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PokemonImageResolver } from 'src/app/shared/helpers/pokemon-image-resolver';
+import { PokemonImageHelper } from 'src/app/shared/helpers/pokemon-image-helper';
 import { PokemonDetail } from 'src/app/shared/models/pokemon.model';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MainPokemonDetailService {
-
-  constructor(private pokedexDataService: PokedexDataService) { }
+  constructor(private pokedexDataService: PokedexDataService) {}
 
   /**
    * Get Pokemon by name
@@ -22,7 +21,7 @@ export class MainPokemonDetailService {
         return {
           id: pokemonResponse.id,
           name: pokemonResponse.name,
-          imgUrl: PokemonImageResolver.getUrlImageByName(pokemonResponse.name),
+          imgUrl: PokemonImageHelper.getUrlImageByName(pokemonResponse.name),
           types: pokemonResponse.types.map((typeElement: any) => {
             return typeElement.type.name;
           }),
@@ -31,7 +30,7 @@ export class MainPokemonDetailService {
             return abilityElement.ability.name;
           }),
         } as PokemonDetail;
-      }));
+      })
+    );
   }
-
 }

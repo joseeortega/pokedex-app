@@ -1,17 +1,5 @@
 @import "colors";
 
-.pointer {
-    cursor: pointer;
-}
-
-*:focus {
-    outline: none !important;
-}
-
-body {
-    background-color: $background;
-}
-
 * {
     font-family: Grotesque, Arial, Helvetica, sans-serif !important;
     font-weight: lighter;
@@ -20,18 +8,26 @@ body {
     }
 }
 
+body {
+    background-color: $background;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 .rounded {
     border-radius: 0.3em;
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
-.bolder{
+.bolder {
     font-weight: bolder;
 }
 
-.capitalize{
+.capitalize {
     text-transform: capitalize;
 }
