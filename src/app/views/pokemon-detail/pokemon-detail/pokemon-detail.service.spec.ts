@@ -1,9 +1,9 @@
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
 import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
 import { PokedexDataMockService } from 'src/app/shared/mocks/services/pokedex-data/pokedex-data.mock.service';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 import { PokemonDetailService } from './pokemon-detail.service';
 

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 import { PokemonPreviewComponent } from './components/pokemon-preview/pokemon-preview.component';
 
 import { PokemonListComponent } from './pokemon-list.component';

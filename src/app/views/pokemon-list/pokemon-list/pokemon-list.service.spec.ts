@@ -1,10 +1,10 @@
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { PokedexDataMockService } from 'src/app/shared/mocks/services/pokedex-data/pokedex-data.mock.service';
 import { Pokemon } from 'src/app/shared/models/pokemon.model';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 import { PokemonListService } from './pokemon-list.service';
 

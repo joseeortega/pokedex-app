@@ -2,9 +2,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { configureTestSuite } from 'dist/pokedex-app/assets/test/testing';
 import { POKEMON_DETAIL_MOCK } from 'src/app/shared/mocks/models/pokemon.mock';
 import { PokemonDetailMockService } from 'src/app/shared/mocks/services/pokemon-detail/pokemon-detail.mock.service';
+import { configureTestSuite } from 'src/app/shared/test/testing';
 
 import { PokemonDetailComponent } from './pokemon-detail.component';
 import { PokemonDetailService } from './pokemon-detail.service';
