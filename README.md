@@ -3,20 +3,29 @@
 Basic project that consumes the Pokemon API (pokeapi.co).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
+## Filter by name (bonus)
+The filter by name bonus functionality has not been implemented because the infinite scroll was chosen (due to the adjusted time),
+prioritizing the web's performance avoiding load all the elements on the DOM.
+If the filter had been implemented, the strategy of obtaining the pokemons would have been changed, obtaining all the pokemons in one request
+and performing a local filtering of these pokemon on memory, on the other hand, to continue using the infinite scroll it would have been done
+a paging on memory of all the pokemons based on the filter inserted by the user.
+
 ## Project structure
 This project, has a modular structure respecting the principle of single responsibility, making use of stateful components, stateless components, and services with business logic.
+
+All components make use of the OnPush change detection strategy to optimize application performance.
 
 The project is divided into various modules that are loaded on demand using the lazy loading technique to guarantee the correct performance of the application and scalability.
 
 ## Design
-The design of the portal is inspired by the suggestion mentioned in the technical test.
+The design of the web is inspired by the suggestion mentioned on the technical test.
 
 The Grotesque font has been imported into the project.
 
 Taking advantage of the advantages that SCSS offers, the project has global styles, color and size variables.
 
 ## Responsive design
-A basic adaptation has been made so that the portal is functional both on desktop and mobile devices (Test the portal on both devices)
+A basic adaptation has been made, making web functional both on desktop and mobile devices (Test the web on both devices)
 
 ## Interceptors
 2 HTTP request interceptors have been implemented.

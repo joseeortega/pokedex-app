@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class PokedexDataService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPokemons(
     offset: number,
