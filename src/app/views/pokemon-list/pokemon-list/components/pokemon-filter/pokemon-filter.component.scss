@@ -6,8 +6,7 @@ form {
     .form-group {
         position: relative;
         padding: 1em 0 0;
-        margin: 1em auto;
-        width: 50%;
+        margin: 1em;
 
         .form-field {
             font-family: Grotesque, Arial;
@@ -63,11 +62,5 @@ form {
             font-size: 1em;
             color: $gray;
         }
-    }
-}
-
-@media (max-width: 600px) {
-    .form-group {
-        width: 70%;
     }
 }

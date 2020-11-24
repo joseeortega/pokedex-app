@@ -4,6 +4,11 @@ main {
     text-align: center;
 }
 
+div#pokemon-filter-list {
+    width: 50%;
+    margin: 0 auto;
+}
+
 div#pokemon-table-list {
     display: flex;
     justify-content: center;
@@ -47,5 +52,9 @@ div#pokemon-table-title {
 @media (max-width: 600px) {
     img.pokemon-logo {
         width: 80%;
+    }
+
+    div#pokemon-filter-list {
+        width: 70%;
     }
 }

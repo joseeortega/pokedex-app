@@ -9,7 +9,9 @@
         <p class="text-lead bold">151 Pokemons</p>
     </div>
 
-    <app-pokemon-filter (searchActionEvent)="filter($event)"></app-pokemon-filter>
+    <div id="pokemon-filter-list">
+        <app-pokemon-filter (searchActionEvent)="filter($event)"></app-pokemon-filter>
+    </div>
 
     <div id="pokemon-table-list" infiniteScroll [infiniteScrollDistance]="3" [infiniteScrollThrottle]="50"
         (scrolled)="onScroll()">
