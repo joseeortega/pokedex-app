@@ -4,7 +4,7 @@ Basic project that consumes the Pokemon API (pokeapi.co).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
 ## Filter by name (bonus)
-*  master (branch): The filter by name bonus functionality has not been implemented (in this branch) because the infinite scroll was chosen (due to the adjusted time),
+*  master (branch): The filter by name bonus functionality has not been implemented because the infinite scroll was chosen (due to the adjusted time),
 prioritizing the web's performance avoiding load all the elements on the DOM.
 The infinite scroll is based on server side (API) pagination
 
