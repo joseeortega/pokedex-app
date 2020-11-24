@@ -10,6 +10,12 @@ All components make use of the OnPush change detection strategy to optimize appl
 
 The project is divided into various modules that are loaded on demand using the lazy loading technique to guarantee the correct performance of the application and scalability.
 
+## Filter by name (bonus)
+The filter by name bonus functionality has been implemented.
+The chosen strategy was obtaining all the pokemons in one request 
+and performing a local filtering of these pokemon on memory, on the other hand, to continue using the infinite scroll,
+a paging on memory of all the pokemons (based on the filter inserted by the user) has been implemented.
+
 ## Design
 The design of the web is inspired by the suggestion mentioned on the technical test.
 
