@@ -1,8 +1,6 @@
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { PokedexDataMockService } from 'src/app/shared/mocks/services/pokedex-data/pokedex-data.mock.service';
-import { Pokemon } from 'src/app/shared/models/pokemon.model';
 import { PokedexDataService } from 'src/app/shared/services/pokedex/pokedex-data.service';
 import { configureTestSuite } from 'src/app/shared/test/testing';
 
@@ -31,37 +29,38 @@ describe('PokemonListService', () => {
 
   afterEach(() => {
     httpTestingController.verify();
+
+    service.pagination = {
+      pageIndex: 0,
+      pageSize: 25,
+    };
+    service.pokemons = [];
+    service.pokemonsFiltered.next([]);
+    service.filterForm = { name: '' };
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should return first Pokemons', () => {
-    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
-    service.getInitialPokemons();
-    expect(service.pokemons.getValue().length).toEqual(20);
+  it('should get all the first generation Pokemon', () => {
+    service.getPokemons();
+    expect(service.pokemons.length).toEqual(151);
+    expect(service.pokemonsFiltered.getValue().length).toEqual(25);
   });
 
   it('should set list as completed and avoid last call', () => {
-    service.pokemons = new BehaviorSubject<Pokemon[]>(null);
-    service.getInitialPokemons();
-    expect(service.pokemons.getValue().length).toEqual(20);
+    service.getPokemons();
+    expect(service.pokemonsFiltered.getValue().length).toEqual(25);
     service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(40);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(60);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(80);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(100);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(120);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toEqual(140);
-    service.getMorePokemons();
-    expect(service.pokemons.getValue().length).toBeGreaterThan(140);
-    service.getMorePokemons();
+    expect(service.pokemonsFiltered.getValue().length).toEqual(50);
+  });
+
+  it('should set filter by char', () => {
+    service.getPokemons();
+    expect(service.pokemonsFiltered.getValue().length).toEqual(25);
+    service.filterPokemons({ name: 'char' });
+    expect(service.pokemonsFiltered.getValue().length).toEqual(3);
   });
 
 });

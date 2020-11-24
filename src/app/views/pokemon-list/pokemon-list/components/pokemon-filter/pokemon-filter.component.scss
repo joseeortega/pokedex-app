@@ -1,0 +1,73 @@
+@import "./../../../../../../assets/styles/colors.scss";
+
+form {
+    text-align: center;
+
+    .form-group {
+        position: relative;
+        padding: 1em 0 0;
+        margin: 1em auto;
+        width: 50%;
+
+        .form-field {
+            font-family: Grotesque, Arial;
+            width: 100%;
+            border: 0;
+            border-bottom: 0.1em solid $gray;
+            outline: 0;
+            font-size: 1.3em;
+            color: $slate;
+            padding: 0.3em 0;
+            background: transparent;
+            transition: border-color 0.2s;
+
+            &::placeholder {
+                color: transparent;
+            }
+
+            &:placeholder-shown ~ .form-label {
+                font-size: 1.3em;
+                cursor: text;
+                top: 0.8em;
+            }
+
+            /* reset input */
+            &:required,
+            &:invalid {
+                box-shadow: none;
+            }
+
+            &:focus {
+                ~ .form-label {
+                    position: absolute;
+                    top: 0;
+                    display: block;
+                    transition: 0.2s;
+                    font-size: 0.8em;
+                    color: $pokeBlue;
+                    font-weight: 700;
+                }
+                padding-bottom: 0.5em;
+                font-weight: 700;
+                border-width: 0.2em;
+                border-image: linear-gradient(to right, $pokeBlue, $transparent);
+                border-image-slice: 1;
+            }
+        }
+
+        .form-label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1em;
+            color: $gray;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .form-group {
+        width: 70%;
+    }
+}

@@ -47,4 +47,16 @@ describe('PokemonListComponent', () => {
     expect(navigateSpy).toHaveBeenCalled();
   });
 
+  it('should call to Pokemon Service Filter', () => {
+    const navigateSpy = spyOn(component.pokemonListService, 'filterPokemons');
+    component.filter({ name: 'ivysaur' });
+    expect(navigateSpy).toHaveBeenCalledWith({ name: 'ivysaur' });
+  });
+
+  it('should call to On Scroll', () => {
+    const navigateSpy = spyOn(component.pokemonListService, 'getMorePokemons');
+    component.onScroll();
+    expect(navigateSpy).toHaveBeenCalled();
+  });
+
 });

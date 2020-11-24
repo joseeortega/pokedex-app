@@ -3,13 +3,6 @@
 Basic project that consumes the Pokemon API (pokeapi.co).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
-## Filter by name (bonus)
-The filter by name bonus functionality has not been implemented because the infinite scroll was chosen (due to the adjusted time),
-prioritizing the web's performance avoiding load all the elements on the DOM.
-If the filter had been implemented, the strategy of obtaining the pokemons would have been changed, obtaining all the pokemons in one request
-and performing a local filtering of these pokemon on memory, on the other hand, to continue using the infinite scroll it would have been done
-a paging on memory of all the pokemons based on the filter inserted by the user.
-
 ## Project structure
 This project, has a modular structure respecting the principle of single responsibility, making use of stateful components, stateless components, and services with business logic.
 

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { animations } from 'src/app/core/animations/animations';
+import { PokemonFilter } from 'src/app/shared/models/pokemon.model';
 import { PokemonListService } from './pokemon-list.service';
 
 @Component({
@@ -8,7 +8,6 @@ import { PokemonListService } from './pokemon-list.service';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.scss'],
   providers: [PokemonListService],
-  animations: [animations],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonListComponent implements OnInit {
@@ -27,12 +26,16 @@ export class PokemonListComponent implements OnInit {
     this.router.navigate(['pokemon', name]);
   }
 
-  private getInitialPokedex(): void {
-    this.pokemonListService.getInitialPokemons();
-  }
-
   onScroll(): void {
     this.pokemonListService.getMorePokemons();
+  }
+
+  filter(pokemonFilter: PokemonFilter): void {
+    this.pokemonListService.filterPokemons(pokemonFilter);
+  }
+
+  private getInitialPokedex(): void {
+    this.pokemonListService.getPokemons();
   }
 
   private scrollToTop(): void {

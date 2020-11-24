@@ -9,3 +9,11 @@ export interface PokemonDetail extends Pokemon {
     height: number;
     abilities: string[];
 }
+
+export class PokemonFilter {
+
+    constructor(
+        public name?: string,
+    ) {
+    }
+}
